@@ -1,0 +1,25 @@
+#%RAML 1.0 Trait
+
+usage: |
+      Apply this trait to any API that needs to implement Pagination.
+      A backend application will calculate next page using following logic
+      Next Page Index = (page - 1) * size + 1
+
+responses:
+  200:
+    headers:
+      totalRecord: string
+      currentPage: string
+      pageSize: string     
+
+queryParameters:
+  page:
+    type: string
+    description: The index of the page.
+    example: "1"
+    required: true
+  size:
+    type: string
+    description: The number of elements to return per page. I don't think it would be better to return more than 100 elements in a single call
+    example: "10"
+    required: true

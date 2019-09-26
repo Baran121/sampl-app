@@ -1,0 +1,14 @@
+#%RAML 1.0 Trait
+usage: Apply this trait to any API that needs to provide userId and userToken.
+headers:
+  userCode:
+    description: The user code associated with the registration/login
+    type: string
+    required: true
+    minLength: 1
+  userToken:
+    description: The user token associated with the registration/login
+    type: string
+    required: true
+    minLength: 1
+  
