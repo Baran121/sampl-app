@@ -1,0 +1,12 @@
+#%RAML 1.0 Trait
+
+usage: Apply this trait to all the retrieve methods of a particular identifier (GET /{id} ) of all the resources of the API 
+
+responses:
+  200:
+    headers:
+      ETag:
+        description: An identifier for a specific version of a resource
+        type: string
+        example: bfc13a84729c4290ef8b2c2730249c88ca92d82d
+        required: true

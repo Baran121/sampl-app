@@ -1,0 +1,36 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/8a498cc0-40ff-406b-b0f6-a1e2bc409c56/ # 
+title: RAML Template 
+version: v1
+protocols: [HTTP, HTTPS]
+mediaType: application/json
+
+documentation:
+  - title: RAML Template
+    content: Dreamz content
+  - title: Legal
+    content: Legal Terms...
+
+traits: 
+  clientIdEnforced: !include common/traits/clientIdEnforced.raml
+  pagination: !include common/traits/pagination.raml
+  orderBy: !include common/traits/orderBy.raml
+  errorHandling: !include common/traits/commonErrorHandling.raml
+
+uses:
+  security-schemes: !inlcude common/traits/security-scheme.raml
+
+types: 
+   employees: !include Types/employees.raml
+   
+resourceTypes:    
+  collection: !include ResourceTypes/collection.raml
+  members: !include ResourceTypes/members.raml
+securedBy: [ security-schemes.basic ]
+
+/employees:
+  type:
+    collection:
+  get:
+    is: [clientIdEnforced, errorHandling]
+  

@@ -1,0 +1,27 @@
+#%RAML 1.0 ResourceType
+
+get?:     
+  description: Retrieve a collection of all <<resourcePathName>>
+  displayName: Retrieve a collection of all <<resourcePathName>>
+  
+  responses:
+    200:
+      body:
+        application/json:
+          type: <<resourcePathName>>[]
+    204:
+      body:
+        application/json:
+          example:
+            []
+
+post?:  
+  description: Create a new <<resourcePathName>>
+  displayName: Create new <<resourcePathName>>
+  
+  body:
+    application/json:
+      type: new_<<resourcePathName>>[]
+  responses:
+    201:
+      headers:

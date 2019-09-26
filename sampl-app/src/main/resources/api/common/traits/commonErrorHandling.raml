@@ -1,0 +1,274 @@
+#%RAML 1.0 Trait
+usage: Apply this trait to any API that needs to implement the common error handling
+description: Any error encountered within the API would result in the the following responses being generated.
+
+uses:
+  error: commonTypes.raml
+
+responses:
+  304:
+    description: Not Modified
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 304,
+              "errorDateTime": "2017-12-10T12:10:00Z",
+              "errorMessage": "Not Modified",
+              "errorDescription": "Not Modified error description"
+            }
+          }        
+  400:
+    description: Bad Request
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301  
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 400,
+              "errorDateTime": "2017-12-10T12:10:00Z",
+              "errorMessage": "Bad Request",
+              "errorDescription": "Bad Request error description"
+            }
+          }
+
+  401:
+    description: Not Found
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 401,
+              "errorDateTime": "2019-05-29T11:39:57.000Z",
+              "errorMessage": "An optional error message regarding the problem",
+              "errorDescription": "Unauthorized error description"
+            }
+          }
+
+  404:
+    description: Not Found
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 404,
+              "errorDateTime": "2017-12-10T12:10:00Z",
+              "errorMessage": "Not Found",
+              "errorDescription": "Not Found error description"
+            }
+          }        
+  405:
+    description: Method Not Allowed
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 405,
+              "errorDateTime": "2017-12-10T12:10:00Z",
+              "errorMessage": "Method Not Allowed",
+              "errorDescription": "Method Not Allowed error description"
+            }
+          }        
+  406:
+    description: Not Acceptable
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 406,
+              "errorDateTime": "2017-12-10T12:10:00Z",
+              "errorMessage": "Not Acceptable",
+              "errorDescription": "Not Acceptable error description"
+            }
+          }        
+  409:
+    description: Conflict
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 409,
+              "errorDateTime": "2017-12-10T12:10:00Z",
+              "errorMessage": "Conflict",
+              "errorDescription": "Conflict error description"
+            }
+          }        
+  415:
+    description: Unsupported Media Type
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 415,
+              "errorDateTime": "2017-12-10T12:10:00Z",
+              "errorMessage": "Unsupported Media Type",
+              "errorDescription": "Unsupported Media Type error description"
+            }
+          }        
+  500:
+    description: Internal Server Error
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 500,
+              "errorDateTime": "2017-12-10T12:10:00Z",
+              "errorMessage": "Internal Server Error",
+              "errorDescription": "Internal Server Error error description"
+            }
+          }        
+  501:
+    description: Not Implemented
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 501,
+              "errorDateTime": "2017-12-10T12:10:00Z",
+              "errorMessage": "Not Implemented",
+              "errorDescription": "Not Implemented error description"
+            }
+          }        
+  502:
+    description: Bad Gateway
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 502,
+              "errorDateTime": "2017-12-10T12:10:00Z",
+              "errorMessage": "Bad Gateway",
+              "errorDescription": "Bad Gateway error description"
+            }
+          }        
+  504:
+    description: Gateway Time-out
+    headers:
+      X-TRANSACTION-ID:
+        description: A code to track API calls end to end. A GUID(https://en.wikipedia.org/wiki/Universally_unique_identifier) is highly recommanded. This will lived for the during of a transaction.
+        type: string
+        maxLength: 50
+        minLength: 5
+        required: true
+        example: 3F2504E0-4F89-11D3-9A0C-0305E82C3301
+    body:
+      application/json:
+        type: error.commonErrorResponse
+        example:
+          {
+            "error": {
+              "errorCode": 504,
+              "errorDateTime": "2017-12-10T12:10:00Z",
+              "errorMessage": "Gateway Time-out",
+              "errorDescription": "Gateway Time-out error description"
+            }
+          }        

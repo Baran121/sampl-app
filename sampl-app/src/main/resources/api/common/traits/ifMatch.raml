@@ -1,0 +1,11 @@
+#%RAML 1.0 Trait
+
+usage: Apply this trait to all the update methods (PUT, PATCH) of all the resources of the API 
+
+headers:
+  
+  If-Match:
+    description: Specify the if-match header which will be verified against the ETag value.
+    type: string
+    example: bfc13a84729c4290ef8b2c2730249c88ca92d82d
+    required: true
