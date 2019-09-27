@@ -29,14 +29,15 @@
 			            <uri>https://anypoint.mulesoft.com</uri>
 			            <muleVersion>4.2.0</muleVersion>
 			            <username>bmano27</username>
-			            <password>Mindtree@123</password>
+			            <password>${anypoint.password}</password>
 			            <applicationName>sample-api-s-dev</applicationName>
 			            <environment>Sandbox</environment>
 			            <properties>
 			                <key>value</key>
 			            </properties>
 			        </cloudHubDeployment>
-    				</configuration>
+    				<classifier>mule-application</classifier>
+                </configuration>
 			</plugin>
 		</plugins>
 	</build>
